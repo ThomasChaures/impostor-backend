@@ -1,0 +1,18 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres:17
+    container_name: impostor_db_postgresql
+    restart: always
+    environment:
+      POSTGRES_USER: thomaschaures
+      POSTGRES_PASSWORD: admin200320232025
+      POSTGRES_DB: impostor
+    ports:
+      - "5459:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
